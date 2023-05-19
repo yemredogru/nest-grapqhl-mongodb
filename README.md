@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) In this project, we performed the process of creating a Course, creating a student, and establishing the relationship between the course and the student with Nestjs, Graphql and MongoDB.
 
 ## Installation
 
