@@ -4,7 +4,10 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Lesson } from './lesson/lesson.entity';
-import { LessonService } from './no-spec/lesson/lesson.service';
+import { LessonService } from './lesson/lesson.service';
+import { StudentModule } from './student/student.module';
+import { Student } from './student/student.entity';
+import { StudentService } from './student/student.service';
 
 @Module({
   imports: [
@@ -14,15 +17,17 @@ import { LessonService } from './no-spec/lesson/lesson.service';
       synchronize: true,
       useUnifiedTopology: true,
       entities: [
-        Lesson
+        Lesson,
+        Student
       ]
     }),
     GraphQLModule.forRoot({
       autoSchemaFile: true,
       driver: ApolloDriver,
     }),
-    LessonModule
+    LessonModule,
+    StudentModule
   ],
-  providers: [LessonService]
+  
 })
 export class AppModule {}
